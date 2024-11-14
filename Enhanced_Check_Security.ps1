@@ -23,8 +23,9 @@
 #>
 
 [CmdletBinding()]
+
 param (
-    [Parameter(Position=0, Mandatory=$false, HelpMessage="Specify the output path for the results file.")]
+    [Parameter(Position = 0, Mandatory = $false, HelpMessage = "Specify the output path for the results file.")]
     [string]$OutputPath
 )
 
@@ -220,8 +221,8 @@ function Perform-DomainChecks {
         # Example: Ensure that domain-specific applications are installed
         $requiredSoftware = @("CompanyVPN", "CompanyEndpointProtection", "CompanyComplianceAgent")
         $installedSoftware = Get-ItemProperty HKLM:\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*, HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\* | 
-            Select-Object DisplayName, DisplayVersion | 
-            Where-Object { $_.DisplayName -and ($requiredSoftware -contains $_.DisplayName) }
+        Select-Object DisplayName, DisplayVersion | 
+        Where-Object { $_.DisplayName -and ($requiredSoftware -contains $_.DisplayName) }
 
         foreach ($software in $requiredSoftware) {
             if ($installedSoftware.DisplayName -contains $software) {
@@ -599,8 +600,8 @@ try {
     # List of commonly vulnerable software. This list can be expanded as needed.
     $vulnerableSoftware = @("Adobe Acrobat Reader", "Java SE", "Mozilla Firefox", "Google Chrome", "Skype", "WinRAR", "7-Zip", "CompanyVPN", "CompanyEndpointProtection", "CompanyComplianceAgent")
     $installedSoftware = Get-ItemProperty HKLM:\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*, HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\* | 
-        Select-Object DisplayName, DisplayVersion, Publisher, InstallDate | 
-        Where-Object { $_.DisplayName -and ($vulnerableSoftware -contains $_.DisplayName) }
+    Select-Object DisplayName, DisplayVersion, Publisher, InstallDate | 
+    Where-Object { $_.DisplayName -and ($vulnerableSoftware -contains $_.DisplayName) }
 
     if ($installedSoftware) {
         foreach ($app in $installedSoftware) {
@@ -756,9 +757,9 @@ function Display-Results {
         switch ($result.Status) {
             "Passed" { $statusColor = "Green" }
             "Failed" { $statusColor = "Red" }
-            "Error"  { $statusColor = "Yellow" }
-            "Info"   { $statusColor = "Magenta" }
-            default  { $statusColor = "White" }
+            "Error" { $statusColor = "Yellow" }
+            "Info" { $statusColor = "Magenta" }
+            default { $statusColor = "White" }
         }
 
         # Format each row with colored status
@@ -949,6 +950,7 @@ All security checks passed successfully. Your system meets the recommended secur
     catch {
         Write-Output "Failed to save results to the specified path. Error: $_.Exception.Message"
     }
-} else {
+}
+else {
     Write-Output "No output path specified."
 }
