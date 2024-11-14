@@ -1,5 +1,5 @@
 # Windows Security Check Script
-[![PSScriptAnalyzer](https://github.com/jomardyan/Windows11-Security-Check-for-IT-users/actions/workflows/powershell.yml/badge.svg?branch=main)](https://github.com/jomardyan/Windows11-Security-Check-for-IT-users/actions/workflows/powershell.yml)
+[![PSScriptAnalyzer](https://github.com/jomardyan/Windows11-Security-Check-for-IT-users/actions/workflows/powershell.yml/badge.svg?branch=main)](https://github.com/jomardyan/Windows11-Security-Check-for-IT-users/actions/workflows/powershell.yml) [![Mark stale issues and pull requests](https://github.com/jomardyan/Windows11-Security-Check-for-IT-users/actions/workflows/stale.yml/badge.svg)](https://github.com/jomardyan/Windows11-Security-Check-for-IT-users/actions/workflows/stale.yml) [![Codacy Security Scan](https://github.com/jomardyan/Windows11-Security-Check-for-IT-users/actions/workflows/codacy.yml/badge.svg)](https://github.com/jomardyan/Windows11-Security-Check-for-IT-users/actions/workflows/codacy.yml)
 
 A comprehensive PowerShell script to assess and report on the security configuration of Windows 10 and Windows 11 systems.
 
