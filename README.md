@@ -44,8 +44,7 @@ This script performs a series of security checks to evaluate the security postur
 - **Operating System:** Windows 10 or Windows 11.
 - **PowerShell Version:** 5.1 or later.
 - **Administrative Privileges:** Run the script as an administrator.
-- **Execution Policy:** Set to allow running scripts (e.g., `RemoteSigned`).||  RUN:  Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-
+- **Execution Policy:** Set to allow running scripts (e.g., `RemoteSigned`).
 
 ## Usage
 
